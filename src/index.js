@@ -10,7 +10,7 @@ lastMonthDate.setMonth(lastMonthDate.getMonth() - 1)
 const lastMonth = lastMonthDate.getMonth()
 
 // 格式化日期：yyyy-MM-dd
-function formatDate(date) {
+export function formatDate(date) {
   const myyear = date.getFullYear()
   let mymonth = date.getMonth() + 1
   let myweekday = date.getDate()
@@ -24,58 +24,58 @@ function formatDate(date) {
 }
 
 // 获取当前时间
-function getCurrentDate() {
+export function getCurrentDate() {
   return new Date().getTime()
 }
 
 //  获取昨天开始时间
-function getYesterdayStartDate() {
+export function getYesterdayStartDate() {
   const now = new Date()
   let yesterdayStart = new Date(now.setHours(0, 0, 0, 0) - 60 * 60 * 1000 * 24 * 1).getTime()
   return yesterdayStart
 }
 
 // 获取昨天结束时间
-function getYesterdayEndDate() {
+export function getYesterdayEndDate() {
   const now = new Date()
   let yesterdayEnd = now.setHours(23, 59, 59, 0) - 60 * 60 * 1000 * 24 * 1
   return yesterdayEnd
 }
 
 //  获取今天开始时间
-function getTodayStartDate() {
+export function getTodayStartDate() {
   const now = new Date()
   let nowrdayStart = now.setHours(0, 0, 0, 0)
   return nowrdayStart
 }
 
 // 获取今天结束时间
-function getTodayEndDate() {
+export function getTodayEndDate() {
   const now = new Date()
   let nowrdayStart = now.setHours(23, 59, 59, 0)
   return nowrdayStart
 }
 
 // 获得本周的开始日期
-function getWeekStartDate() {
+export function getWeekStartDate() {
   const weekStartDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek).getTime()
   return weekStartDate
 }
 // 获得本周的结束日期
-function getWeekEndDate() {
+export function getWeekEndDate() {
   const weekEndDate = new Date(nowYear, nowMonth, nowDay + (6 - nowDayOfWeek), 23, 59, 59).getTime()
   return weekEndDate
 }
 
 // 获得某月的天数
-function getMonthDays(myMonth) {
+export function getMonthDays(myMonth) {
   const monthStartDate = new Date(nowYear, myMonth, 1)
   const monthEndDate = new Date(nowYear, myMonth + 1, 1)
   const days = (monthEndDate - monthStartDate) / (1000 * 60 * 60 * 24)
   return days
 }
 // 获得本季度的开始月份
-function getQuarterStartMonth() {
+export function getQuarterStartMonth() {
   let quarterStartMonth = 0
   if (nowMonth < 3) {
     quarterStartMonth = 0
@@ -93,27 +93,27 @@ function getQuarterStartMonth() {
 }
 
 // 获得上周的开始日期
-function getLastWeekStartDate() {
+export function getLastWeekStartDate() {
   const weekStartDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek - 7).getTime()
   return weekStartDate
 }
 // 获得上周的结束日期
-function getLastWeekEndDate() {
+export function getLastWeekEndDate() {
   const weekEndDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek - 1, 23, 59, 59, 0).getTime()
   return weekEndDate
 }
 // 获得本月的开始日期
-function getMonthStartDate() {
+export function getMonthStartDate() {
   const monthStartDate = new Date(nowYear, nowMonth, 1).getTime()
   return monthStartDate
 }
 // 获得本月的结束日期
-function getMonthEndDate() {
+export function getMonthEndDate() {
   const monthEndDate = new Date(nowYear, nowMonth, getMonthDays(nowMonth), 23, 59, 59, 0).getTime()
   return monthEndDate
 }
 // 获得上月开始时间
-function getLastMonthStartDate() {
+export function getLastMonthStartDate() {
   let lastMonthStartDate = ''
   if (lastMonth === 11) {
     lastMonthStartDate = new Date(nowYear - 1, lastMonth, 1).getTime()
@@ -123,7 +123,7 @@ function getLastMonthStartDate() {
   return lastMonthStartDate
 }
 // 获得上月结束时间
-function getLastMonthEndDate() {
+export function getLastMonthEndDate() {
   let lastMonthEndDate = ''
   if (lastMonth === 11) {
     lastMonthEndDate = new Date(nowYear - 1, lastMonth, getMonthDays(lastMonth), 23, 59, 59, 0).getTime()
@@ -133,19 +133,19 @@ function getLastMonthEndDate() {
   return lastMonthEndDate
 }
 // 获得本季度的开始日期
-function getQuarterStartDate() {
+export function getQuarterStartDate() {
   const quarterStartDate = new Date(nowYear, getQuarterStartMonth(), 1).getTime()
   return quarterStartDate
 }
 // 获得本季度的结束日期
-function getQuarterEndDate() {
+export function getQuarterEndDate() {
   const quarterEndMonth = getQuarterStartMonth() + 2
   const quarterStartDate = new Date(nowYear, quarterEndMonth, getMonthDays(quarterEndMonth)).getTime()
   return quarterStartDate
 }
 
 // 获取去年开始时间
-function getLastyearStartDate() {
+export function getLastyearStartDate() {
   let nowYear = now.getYear() // 当前年
   nowYear += nowYear < 2000 ? 1900 : 0 //
   const lastYear = --nowYear
@@ -154,7 +154,7 @@ function getLastyearStartDate() {
 }
 
 // 获取去年结束时间
-function getLastyearEndDate() {
+export function getLastyearEndDate() {
   let nowYear = now.getYear() // 当前年
   nowYear += nowYear < 2000 ? 1900 : 0 //
   const lastYear = --nowYear
@@ -163,7 +163,7 @@ function getLastyearEndDate() {
 }
 
 // 获取今年开始时间
-function getCurrentYearStartDate() {
+export function getCurrentYearStartDate() {
   let nowYear = now.getYear() // 当前年
   nowYear += nowYear < 2000 ? 1900 : 0 //
   const startDay = new Date(nowYear, 0, 1).getTime()
@@ -171,7 +171,7 @@ function getCurrentYearStartDate() {
 }
 
 // 获取今年结束时间
-function getCurrentYearEndDate() {
+export function getCurrentYearEndDate() {
   let nowYear = now.getYear() // 当前年
   nowYear += nowYear < 2000 ? 1900 : 0 //
   const endDay = new Date(nowYear, 11, getMonthDays(11), 23, 59, 59, 0).getTime()
@@ -179,7 +179,7 @@ function getCurrentYearEndDate() {
 }
 
 // 获取过去num天时间
-function getOldDaysStartDate(num = 1) {
+export function getOldDaysStartDate(num = 1) {
   const now = new Date()
   return now.setHours(0, 0, 0, 0) - num * 60 * 60 * 1000 * 24
 }
