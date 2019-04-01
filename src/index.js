@@ -137,7 +137,7 @@ function getQuarterStartDate() {
   const quarterStartDate = new Date(nowYear, getQuarterStartMonth(), 1).getTime()
   return quarterStartDate
 }
-// 或的本季度的结束日期
+// 获得本季度的结束日期
 function getQuarterEndDate() {
   const quarterEndMonth = getQuarterStartMonth() + 2
   const quarterStartDate = new Date(nowYear, quarterEndMonth, getMonthDays(quarterEndMonth)).getTime()

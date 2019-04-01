@@ -1,0 +1,29 @@
+## 日志
+
+### [v1.0.0]
+
+#### 时间 2019-04-01
+
+- feature formatDate 格式化日期：yyyy-MM-dd
+- feature getCurrentDate 获取当前时间
+- feature getYesterdayStartDate 获取昨天开始时间
+- feature getYesterdayEndDate 获取昨天结束时间
+- feature getTodayStartDate 获取今天开始时间
+- feature getTodayEndDate 获取今天结束时间
+- feature getWeekStartDate 获得本周的开始日期
+- feature getWeekEndDate 获得本周的结束日期
+- feature getMonthDays 获得某月的天数
+- feature getQuarterStartMonth 获得本季度的开始月份
+- feature getLastWeekStartDate 获得上周的开始日期
+- feature getLastWeekEndDate 获得上周的结束日期
+- feature getMonthStartDate 获得本月的开始日期
+- feature getMonthEndDate 获得本月的结束日期
+- feature getLastMonthStartDate 获得上月开始时间
+- feature getLastMonthEndDate 获得上月结束时间
+- feature getQuarterStartDate 获得本季度的开始日期
+- feature getQuarterEndDate 获得本季度的结束日期
+- feature getLastyearStartDate 获取去年开始时间
+- feature getLastyearEndDate 获取去年结束时间
+- feature getCurrentYearStartDate 获取今年开始时间
+- feature getCurrentYearEndDate 获取今年结束时间
+- feature getOldDaysStartDate 获取过去 num 天时间
