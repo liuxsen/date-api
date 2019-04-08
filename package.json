@@ -3,6 +3,7 @@
   "version": "1.0.5",
   "description": "",
   "main": "lib/main.js",
+  "typings": "src/index.d.ts",
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
     "dev": "webpack --config webpack.dev.config.js",
