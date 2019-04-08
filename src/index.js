@@ -56,14 +56,33 @@ export function getTodayEndDate() {
   return nowrdayStart
 }
 
-// 获得本周的开始日期
-export function getWeekStartDate() {
-  const weekStartDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek).getTime()
+// 获得上周最后一天 周日为第一天 周六为最后一天
+export function getLastWeekLastDate(date = new Date()) {
+  const curr = new Date(date)
+  const first = curr.getDate() - curr.getDay() // First day is the day of the month - the day of the week
+  const lastWeekLastDay = first - 1
+  const lastday = new Date(curr.setDate(lastWeekLastDay)).setHours(23, 59, 59)
+  return lastday
+}
+// 获取上周第一天 周日为第一天 周六为最后一天
+export function getLastWeekFirstDate(date = new Date()) {
+  const curr = new Date(date)
+  const first = curr.getDate() - curr.getDay() // First day is the day of the month - the day of the week
+  const lastWeekLastDay = first - 6
+  const lastday = new Date(curr.setDate(lastWeekLastDay)).setHours(0, 0, 0)
+  return lastday
+}
+
+// 获得上周的开始日期 周一为第一天 周日为最后一天
+export function getLastWeekStartDate() {
+  let nowMonth = now.getMonth() // 当前月
+  const weekStartDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek - 7).getTime()
   return weekStartDate
 }
-// 获得本周的结束日期
-export function getWeekEndDate() {
-  const weekEndDate = new Date(nowYear, nowMonth, nowDay + (6 - nowDayOfWeek), 23, 59, 59).getTime()
+// 获得上周的结束日期 周一为第一天 周日为最后一天
+export function getLastWeekEndDate() {
+  let nowMonth = now.getMonth() // 当前月
+  const weekEndDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek - 1, 23, 59, 59, 0).getTime()
   return weekEndDate
 }
 
@@ -74,6 +93,7 @@ export function getMonthDays(myMonth) {
   const days = (monthEndDate - monthStartDate) / (1000 * 60 * 60 * 24)
   return days
 }
+
 // 获得本季度的开始月份
 export function getQuarterStartMonth() {
   let quarterStartMonth = 0
@@ -92,16 +112,48 @@ export function getQuarterStartMonth() {
   return quarterStartMonth
 }
 
-// 获得上周的开始日期
-export function getLastWeekStartDate() {
-  const weekStartDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek - 7).getTime()
-  return weekStartDate
+// 获取当前时间是第几周
+export function getWeekNum(date = new Date()) {
+  const thisDay = new Date(date)
+  let nowYear = now.getFullYear() // 当前年
+  const firstDay = new Date(nowYear, 0, 1) //本年的第一天,Js月份从0开始记！0就是1月啦。
+  let dayWeek = thisDay.getDay() //今天周几
+  if (dayWeek == 0) {
+    dayWeek = 7
+  }
+  let startWeek = firstDay.getDay() //本年第一天周几
+  if (startWeek == 0) {
+    startWeek = 7
+  }
+  //第几周
+  const weekNum = Math.floor(((thisDay.getTime() - firstDay.getTime()) / (24 * 60 * 60 * 1000) + startWeek - dayWeek) / 7 + 1)
+  return weekNum
 }
-// 获得上周的结束日期
-export function getLastWeekEndDate() {
-  const weekEndDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek - 1, 23, 59, 59, 0).getTime()
-  return weekEndDate
+
+// 获取上个月第一天 开始时间
+export function getLastMounthStartDate() {
+  const nowdays = new Date()
+  let year = nowdays.getFullYear()
+  let month = nowdays.getMonth()
+  if (month == 0) {
+    month = 12
+    year = year - 1
+  }
+  return new Date(year, month, 1, 0, 0, 0)
 }
+
+// 获取上个月最后一天结束时间
+export function getLastMounthEndDate() {
+  const nowdays = new Date()
+  let year = nowdays.getFullYear()
+  let month = nowdays.getMonth()
+  if (month == 0) {
+    month = 12
+    year = year - 1
+  }
+  return new Date(year, month, 0).setHours(23, 59, 59)
+}
+
 // 获得本月的开始日期
 export function getMonthStartDate() {
   const monthStartDate = new Date(nowYear, nowMonth, 1).getTime()
@@ -207,5 +259,7 @@ export default {
   getLastyearEndDate,
   getCurrentYearStartDate,
   getCurrentYearEndDate,
-  getOldDaysStartDate
+  getOldDaysStartDate,
+  getLastWeekFirstDate,
+  getLastWeekLastDate
 }

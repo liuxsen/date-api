@@ -25,3 +25,8 @@
 - getCurrentYearStartDate 获取今年开始时间
 - getCurrentYearEndDate 获取今年结束时间
 - getOldDaysStartDate 获取过去 num 天时间
+- getLastMounthStartDate 获取上个月第一天开始时间
+- getLastMounthEndDate 获取上个月最后一天结束时间
+
+
+**如果觉得好用，顺便给个star** [git repo](https://github.com/liuxsen/date-api)

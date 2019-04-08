@@ -1,5 +1,13 @@
 ## 日志
 
+### [v1.0.5]
+
+- update getLastMounthStartDate 获取上个月第一天开始时间
+- update getLastMounthEndDate 获取上个月最后一天结束时间
+- update getWeekNum 获取当前时间是一年中第几周
+- update getLastWeekLastDate 获取上周第一天 周日为第一天 周六为最后一天
+- update getLastWeekStartDate 获得上周的开始日期 周一为第一天 周日为最后一天
+
 ### [v1.0.4]
 
 #### 时间 2019-04-01
