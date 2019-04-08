@@ -1,5 +1,9 @@
 ## 日志
 
+### [v1.0.6]
+
+- update 添加ts声明
+
 ### [v1.0.5]
 
 - update getLastMounthStartDate 获取上个月第一天开始时间
