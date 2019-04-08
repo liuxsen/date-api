@@ -1,7 +1,16 @@
 language: node_js
 nodejs:
   - '8'
-
 script:
   - npm install
   - npm run build
+before_deploy: npm run build
+deploy:
+  provider: npm
+  email: liuxsen@163.com
+  api_key: 8b914ee3-aaba-4ce4-a16b-23eec01fef51
+  on:
+    tags: true
+    repo: liuxsen/date-api
+    branch: master
+  tag: latest
