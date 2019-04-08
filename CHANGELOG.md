@@ -1,11 +1,11 @@
 ## 日志
 
 ### [v1.0.6]
-
+#### 时间 2019-04-08
 - update ts支持
 
 ### [v1.0.5]
-
+#### 时间 2019-04-08
 - update getLastMounthStartDate 获取上个月第一天开始时间
 - update getLastMounthEndDate 获取上个月最后一天结束时间
 - update getWeekNum 获取当前时间是一年中第几周
@@ -13,15 +13,11 @@
 - update getLastWeekStartDate 获得上周的开始日期 周一为第一天 周日为最后一天
 
 ### [v1.0.4]
-
 #### 时间 2019-04-01
-
 - update 支持 tree-shaking
 
 ### [v1.0.1]
-
 #### 时间 2019-04-01
-
 - feature formatDate 格式化日期：yyyy-MM-dd
 - feature getCurrentDate 获取当前时间
 - feature getYesterdayStartDate 获取昨天开始时间
