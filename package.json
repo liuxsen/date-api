@@ -1,13 +1,12 @@
 {
   "name": "date-api",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "",
   "main": "lib/main.js",
   "typings": "src/index.d.ts",
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
     "dev": "webpack --config webpack.dev.config.js",
-    "publish": "npm run build && npm publish",
     "postversion": "git push --follow-tags"
   },
   "author": "liuxsen <948771968@qq.com> (http://github.com/liuxsen)",
