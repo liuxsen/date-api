@@ -9,6 +9,7 @@ deploy:
   provider: npm
   email: liuxsen@163.com
   api_key: 8b914ee3-aaba-4ce4-a16b-23eec01fef51
+  skip_cleanup: true
   on:
     tags: true
     repo: liuxsen/date-api
