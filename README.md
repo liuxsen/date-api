@@ -9,7 +9,7 @@ npm install date-api -S
 **common js**
 
 ```js
-const dateApi = require('date-api)
+const dateApi = require('date-api')
 ```
 
 **es6**
