@@ -21,7 +21,7 @@ declare const getQuarterEndDate: () => number
 declare const getLastyearStartDate: () => number
 declare const getLastyearEndDate: () => number
 declare const getCurrentYearEndDate: () => number
-declare const getOldDaysStartDate: (num = 1) => number
+declare const getOldDaysStartDate: (num?: number) => number
 
 export {
   formatDate,
