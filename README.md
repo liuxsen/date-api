@@ -1,5 +1,23 @@
 # 快捷获取日期方法
 
+## usage
+
+```sh
+npm install date-api -S
+```
+
+**common js**
+
+```js
+const dateApi = require('date-api)
+```
+
+**es6**
+
+```js
+import { formatDate } from 'date-api'
+```
+
 **获取时间方法统一返回时间戳**
 
 - formatDate 格式化日期：yyyy-MM-dd
@@ -28,5 +46,4 @@
 - getLastMounthStartDate 获取上个月第一天开始时间
 - getLastMounthEndDate 获取上个月最后一天结束时间
 
-
-**如果觉得好用，顺便给个star** [git repo](https://github.com/liuxsen/date-api)
+**如果觉得好用，顺便给个 star** [git repo](https://github.com/liuxsen/date-api)

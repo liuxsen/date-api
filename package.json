@@ -1,6 +1,6 @@
 {
   "name": "date-api",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "lib/main.js",
   "typings": "src/index.d.ts",
