@@ -20,10 +20,11 @@ function baseUtil() {
 }
 
 // 格式化日期：yyyy-MM-dd
-export function formatDate(date) {
-  const myyear = date.getFullYear()
-  let mymonth = date.getMonth() + 1
-  let myweekday = date.getDate()
+export function formatDate(date = new Date()) {
+  const currDate = new Date(date)
+  const myyear = currDate.getFullYear()
+  let mymonth = currDate.getMonth() + 1
+  let myweekday = currDate.getDate()
   if (mymonth < 10) {
     mymonth = '0' + mymonth
   }

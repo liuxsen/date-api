@@ -1,4 +1,4 @@
-declare const formatDate: (date: Date) => number
+declare const formatDate: (date?: Date | number) => string
 declare const getCurrentDate: () => number
 declare const getYesterdayStartDate: () => number
 declare const getYesterdayEndDate: () => number
