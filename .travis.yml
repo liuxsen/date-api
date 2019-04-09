@@ -1,17 +1,15 @@
 language: node_js
 nodejs:
-  - '8'
+- '8'
 script:
-  - npm install
-  - npm run build
+- npm install
+- npm run build
 before_deploy: npm run build
 deploy:
   provider: npm
-  email: liuxsen@163.com
-  api_key: 8b914ee3-aaba-4ce4-a16b-23eec01fef51
-  skip_cleanup: true
+  email: wyliuxsen@163.com
+  api_key:
+    secure: V1WZMGY6NwQXU0ITliOxZfSjAcCnL+g9YclblHos7ei2uq6lL+wb/901doKeE0st9zZNEfIXl3mGisGp48ZgYblSVb/VjItPdrJNKlYYKwonFhKCUh9xqHFYbdj17orrEovIglAFzXM6luyQRI4pU/i6jcc70RzOu3/CRabHMqJb2CQ/D9RQcrdeHk2UNkb+QZANmlE1yRSklH2FshwNe8w1lEJgeb1Y/cy1wgCO9/Hs0qw3kjPdvFyZv/v3/sdBljyOXYhxsL0xapxXDOMvCzZc/XS+E2e76eQ2xhAkIf28DYpnNC58pWoUUOvx8vkPcenBpqiAt6hX+jlT4WhhzqUuT1EYRO9HlP4GZHGwmGytE8QS1hGiU7aDXFRQMfSlD3prPMk2u0t2liEq1Zr3MA74SxkCS+IgTMCxwXcYvZpY6vp2NaBB4DsfpByFZWNr1HAsD/1MZE4y7ykMmmit+GDU+N3zAz6H2pllbcHq7Jnl+blGGAQBv6qtMIO9kpuNAJ7N4bs0rcsTOerzZ6DjDYtM0sbDdufqxWVWlsSIhG0qfKFKgNSzrP0Jt0hKdtiV0PvHxmEoqHwT6R1qVBjO8IW6grJfROiuZ9jshFsjbLH1E/hHvwmXDeQBtjzfKdC0B4EWw9NnKMN7n2sY9pyi+koJx05GNUKy5yHn6QcezGc=
   on:
     tags: true
     repo: liuxsen/date-api
-    branch: master
-  tag: latest
