@@ -4,6 +4,13 @@
   "description": "",
   "main": "lib/main.js",
   "typings": "src/index.d.ts",
+  "keywords": [
+    "date",
+    "date-time",
+    "date time",
+    "日期方法",
+    "date time utils"
+  ],
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
     "dev": "webpack --config webpack.dev.config.js",
